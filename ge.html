@@ -1,0 +1,429 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gowtham Enterprises</title>
+    
+    <!-- Professional Web Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Premium Light Green Theme Canvas */
+            --body-bg: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 40%, #bbf7d0 100%); /* Radiant Light Mint & Lime Green */
+            --main-board-bg: rgba(6, 78, 59, 0.95);                                   /* Rich Deep Forest Green Glass */
+            
+            /* High Contrast Colors */
+            --vibrant-yellow: #facc15;                 /* Bright Canary Yellow for Headers */
+            --soft-yellow: #fef08a;                    /* Pastel Yellow for Content Readability */
+            --pure-white: #ffffff;                     /* Clean White */
+            --deep-gold: #eab308;                      /* Accent Gold for Icons */
+            --alert-red: #f87171;                      /* Pastel Red for Closures */
+            --glass-panel: rgba(255, 255, 255, 0.04);
+            --border-glow: rgba(250, 204, 21, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--body-bg);
+            background-attachment: fixed;
+            color: var(--soft-yellow);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 50px 20px;
+        }
+
+        /* Interactive Card Container */
+        .main-board {
+            max-width: 1050px;
+            margin: 0 auto;
+            background: var(--main-board-bg);
+            padding: 55px 45px;
+            border-radius: 32px;
+            box-shadow: 0 40px 80px rgba(6, 78, 59, 0.18), inset 0 1px 1px rgba(255,255,255,0.1);
+            border: 2px solid var(--border-glow);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: relative;
+        }
+
+        /* Heading Configuration */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            color: var(--vibrant-yellow);
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Golden Ribbon Divider Line */
+        .color-bar {
+            height: 4px;
+            width: 180px;
+            background: linear-gradient(90deg, var(--deep-gold), var(--vibrant-yellow), var(--deep-gold));
+            margin: 15px auto 0;
+            border-radius: 10px;
+        }
+
+        /* Thirukural Panel */
+        .thirukural-card {
+            background: var(--glass-panel);
+            border: 1px solid rgba(250, 204, 21, 0.15);
+            border-left: 6px solid var(--vibrant-yellow);
+            padding: 25px;
+            margin-bottom: 45px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .kural-ta {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--vibrant-yellow);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .kural-eng {
+            font-size: 1rem;
+            color: var(--pure-white);
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .kural-author {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--deep-gold);
+            margin-top: 10px;
+            font-weight: 700;
+        }
+
+        /* Core Structure Layout Grid */
+        .grid-matrix {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr;
+            gap: 45px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-matrix {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Left Side Service Styles */
+        .services-panel h2 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--vibrant-yellow);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .services-list {
+            list-style: none;
+        }
+
+        .services-list li {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            padding: 16px 20px;
+            background: var(--glass-panel);
+            margin-bottom: 14px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Vibrant Yellow Icons */
+        .services-list li i {
+            font-size: 1.15rem;
+            color: var(--vibrant-yellow);
+            width: 36px;
+            height: 36px;
+            background: rgba(250, 204, 21, 0.12);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            transition: all 0.3s ease;
+        }
+
+        /* Interactive Service Block Hover Animation */
+        .services-list li:hover {
+            background: rgba(250, 204, 21, 0.08);
+            border-color: rgba(250, 204, 21, 0.4);
+            transform: translateY(-2px) translateX(6px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .services-list li:hover i {
+            background: var(--vibrant-yellow);
+            color: #064e3b;
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        /* Right Side Panels (Sidebar) */
+        .sidebar-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .info-card-block {
+            background: var(--glass-panel);
+            border: 1px solid var(--border-glow);
+            padding: 30px;
+            border-radius: 24px;
+            position: relative;
+        }
+
+        .info-card-block h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--vibrant-yellow);
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(250, 204, 21, 0.15);
+            padding-bottom: 8px;
+        }
+
+        /* Live Status Pulse Graphic */
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #34d399;
+            border-radius: 50%;
+            display: inline-block;
+            position: absolute;
+            right: 30px;
+            top: 35px;
+            box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+            animation: pulse 1.6s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+        }
+
+        /* Contact Box Rows */
+        .contact-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-row i {
+            font-size: 1.25rem;
+            color: var(--deep-gold);
+            margin-top: 4px;
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .contact-label-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--soft-yellow);
+            font-weight: 700;
+            opacity: 0.8;
+        }
+
+        .contact-data-value {
+            font-size: 1.15rem;
+            color: var(--pure-white);
+            font-weight: 700;
+        }
+
+        /* Timings List */
+        .timing-rows {
+            list-style: none;
+        }
+
+        .timing-rows li {
+            font-size: 0.98rem;
+            color: var(--pure-white);
+            font-weight: 600;
+            margin-bottom: 14px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .timing-rows li:last-child {
+            margin-bottom: 0;
+        }
+
+        .timing-rows li i {
+            margin-top: 4px;
+            font-size: 1rem;
+        }
+
+        .timing-rows li.status-open i { color: #34d399; }
+        .timing-rows li.status-variable i { color: var(--vibrant-yellow); }
+        .timing-rows li.status-closed { color: var(--alert-red); }
+        .timing-rows li.status-closed i { color: var(--alert-red); }
+
+        /* Footer Location Banner */
+        .location-banner {
+            margin-top: 50px;
+            padding: 30px;
+            background: var(--glass-panel);
+            border-radius: 24px;
+            border: 1px solid var(--border-glow);
+            border-left: 6px solid var(--vibrant-yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .location-banner i {
+            font-size: 1.5rem;
+            color: var(--vibrant-yellow);
+        }
+
+        .address-details-text {
+            color: var(--soft-yellow);
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.7;
+            text-align: center;
+            letter-spacing: 0.3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-board">
+
+        <header>
+            <h1>Gowtham Enterprises</h1>
+            <div class="color-bar"></div>
+        </header>
+
+        <!-- Documented Real Estate Thirukural Frame -->
+        <div class="thirukural-card">
+            <div class="kural-ta">"வாரி பெருக்கி வளம்படுத்து உற்றவை<br>ஆராய்வான் செய்க வினை." (குறள் 512)</div>
+            <div class="kural-eng">"He who enlarges revenues, spreads prosperity, and correctly handles property assets, achieves absolute success."</div>
+            <div class="kural-author">- Thiruvalluvar</div>
+        </div>
+
+        <div class="grid-matrix">
+            
+            <!-- Left Side Services Column -->
+            <div class="services-panel">
+                <h2><i class="fa-solid fa-layer-group"></i> We are providing the services for</h2>
+                <ul class="services-list">
+                    <li><i class="fa-solid fa-file-signature"></i> Property Registration</li>
+                    <li><i class="fa-solid fa-file-shield"></i> Encumbrance Certificate (EC)</li>
+                    <li><i class="fa-solid fa-clone"></i> Copy of Document</li>
+                    <li><i class="fa-solid fa-building-user"></i> Marriage Registration</li>
+                    <li><i class="fa-solid fa-credit-card"></i> Online Payments</li>
+                    <li><i class="fa-solid fa-print"></i> Color Printouts</li>
+                    <li><i class="fa-solid fa-copy"></i> Xerox Printouts</li>
+                    <li><i class="fa-solid fa-file-contract"></i> Rental Agreement Typing (English & Tamil)</li>
+                </ul>
+            </div>
+
+            <!-- Right Side Interactive Side Cards -->
+            <div class="sidebar-panel">
+                
+                <div class="info-card-block contact-box">
+                    <h3><i class="fa-solid fa-address-card"></i> Contact us</h3>
+                    
+                    <div class="contact-row">
+                        <i class="fa-solid fa-phone-flip"></i>
+                        <div>
+                            <div class="contact-label-tag">mobile</div>
+                            <div class="contact-data-value">9444812172</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-row">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                        <div>
+                            <div class="contact-label-tag">Email</div>
+                            <div class="contact-data-value">gowthamxerox91@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card-block timing-box">
+                    <span class="live-dot"></span> <!-- Animated Live Status Dot -->
+                    <h3><i class="fa-solid fa-clock"></i> Opening Timing:</h3>
+                    <ul class="timing-rows">
+                        <li class="status-open">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Monday to Friday :10am to 7pm</span>
+                        </li>
+                        <li class="status-variable">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <span>Saturday : Hours may differs (check by phone 9444812172)</span>
+                        </li>
+                        <li class="status-closed">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                            <span>Closed on All Sundays and Govt.Holidays</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Footnote Location Address Block -->
+        <div class="location-banner">
+            <i class="fa-solid fa-location-dot"></i>
+            <p class="address-details-text">
+                Office Location :No:7,2nd Main Road, New Colony, Chromepet,Chennai-44 <br>
+                Next to Register Office building
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
